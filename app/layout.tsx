@@ -57,6 +57,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        {/* ⚙️ Service Worker registration disabled temporarily to fix caching issues */}
+        {/*
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -72,6 +74,7 @@ export default function RootLayout({
             `,
           }}
         />
+        */}
       </body>
     </html>
   );
