@@ -1,0 +1,15 @@
+/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Service-Worker-Allowed: /
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/vlog*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/hero.png
+  Cache-Control: public, max-age=31536000, immutable
