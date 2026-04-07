@@ -1,7 +1,6 @@
-const CACHE_NAME = 'Vlogging/OTT-cache-v1';
+const CACHE_NAME = 'ott-vlogging-studio-v2.1';
 const ASSETS_TO_CACHE = [
   '/',
-  '/index.html',
   '/manifest.json',
   '/favicon.ico',
   '/vlog1.png',
