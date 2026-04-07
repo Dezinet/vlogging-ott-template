@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* LOGO */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Link href="/" style={{ fontSize: 'clamp(1rem, 4vw, 1.4rem)', fontWeight: 900, letterSpacing: '-0.06em', color: 'var(--text-main)', textTransform: 'uppercase' }}>
-            DEZINET<span style={{ color: 'var(--accent-primary)' }}>VERSE</span>
+            VLOGGING<span style={{ color: 'var(--accent-primary)' }}>/OTT</span>
           </Link>
         </div>
 
@@ -126,7 +126,7 @@ export default function Navbar() {
          </div>
 
          <div style={{ marginTop: 'auto', paddingTop: '40px', textAlign: 'center', opacity: 0.4, fontSize: '0.6rem', fontWeight: 900, letterSpacing: '0.3rem' }}>
-            DEZINETVERSE © 2026 / REAL STORIES.
+            Vlogging/OTT © 2026 / REAL STORIES.
          </div>
       </div>
     </>

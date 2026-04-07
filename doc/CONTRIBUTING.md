@@ -1,6 +1,6 @@
-# 🤝 Contributing to DezinetVerse
+# 🤝 Contributing to Vlogging/OTT
 
-Thank you for considering contributing to the **DezinetVerse** vlogging template! We aim for a high-quality, premium visual experience and performance.
+Thank you for considering contributing to the **Vlogging/OTT** vlogging template! We aim for a high-quality, premium visual experience and performance.
 
 ## 🚀 Getting Started
 

@@ -1,6 +1,6 @@
 # 🔄 Changelog
 
-All notable changes to the DezinetVerse project will be documented here.
+All notable changes to the Vlogging/OTT project will be documented here.
 
 ## [0.2.0] - 2026-04-07
 

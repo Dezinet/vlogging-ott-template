@@ -1,10 +1,10 @@
 # 🏛️ Project Architecture
 
-This document describes the high-level architecture of **DezinetVerse**, detailing the system structure and core workflows.
+This document describes the high-level architecture of **Vlogging/OTT**, detailing the system structure and core workflows.
 
 ## 🧱 1. System High-Level Overview (Next.js 16)
 
-DezinetVerse is built on **Next.js 16 (App Router)** with a focus on high-fidelity visual delivery. The architecture leverages Server-Side Rendering (SSR) for SEO-rich pages and Client-Side Hydration for immersive player interactions.
+Vlogging/OTT is built on **Next.js 16 (App Router)** with a focus on high-fidelity visual delivery. The architecture leverages Server-Side Rendering (SSR) for SEO-rich pages and Client-Side Hydration for immersive player interactions.
 
 ```mermaid
 graph TD
@@ -76,7 +76,7 @@ stateDiagram-v2
 
 ```mermaid
 mindmap
-  root((DezinetVerse))
+  root((Vlogging/OTT))
     Hero (Slider Feature)
     Discovery Dashboard (Hamburger)
       ::icon(fa fa-search)

@@ -19,7 +19,7 @@ export default function AboutPage() {
           Videos about <br/> <span style={{ background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>real life.</span>
         </h1>
         <p style={{ fontSize: '1.25rem', color: 'var(--text-dim)', lineHeight: 1.6, fontWeight: 500, marginBottom: '2rem' }}>
-          DezinetVerse is a small group of friends who love to travel and take videos. We started with one old camera and a dream to see the world. Today, we share our journeys with many people.
+          Vlogging/OTT is a small group of friends who love to travel and take videos. We started with one old camera and a dream to see the world. Today, we share our journeys with many people.
         </p>
         <p style={{ fontSize: '1.1rem', color: 'var(--text-dim)', lineHeight: 1.6, fontWeight: 500 }}>
           We don't use scripts or fake drama. It is just us, our cameras, and the most beautiful places on Earth. We want to show you that the world is big, exciting, and waiting for you.

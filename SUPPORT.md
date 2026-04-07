@@ -1,6 +1,6 @@
 # 🙋 Support Policy
 
-Need help with DezinetVerse? We have several ways to get the support you need.
+Need help with Vlogging/OTT? We have several ways to get the support you need.
 
 ## 🐛 Found a Bug?
 

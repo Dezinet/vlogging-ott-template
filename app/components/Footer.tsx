@@ -62,7 +62,7 @@ export default function Footer() {
         flexWrap: 'wrap',
         gap: '20px'
       }}>
-        <p style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '0.85rem', fontWeight: 700 }}>© 2026 DEZINETVERSE.</p>
+        <p style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '0.85rem', fontWeight: 700 }}>© 2026 Vlogging/OTT.</p>
         <div style={{ display: 'flex', gap: '2rem' }}>
            <Link href="/terms" style={{ color: 'rgba(255, 255, 255, 0.4)', textDecoration: 'none', fontSize: '0.75rem', fontWeight: 800 }}>Privacy</Link>
            <Link href="/terms" style={{ color: 'rgba(255, 255, 255, 0.4)', textDecoration: 'none', fontSize: '0.75rem', fontWeight: 800 }}>Terms</Link>

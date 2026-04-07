@@ -16,7 +16,7 @@ import EmailCTA from './components/home/EmailCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home | DezinetVerse',
+  title: 'Home | Vlogging/OTT',
   description: 'Watch trending vlogs, exclusive series, and members-only content from the world of Dezinet.',
 };
 

@@ -4,7 +4,7 @@ import HomeImage from '../components/HomeImage';
 
 export default function GearPage() {
   const GEAR = [
-    { id: 1, name: 'The Body', model: 'Sony A7S III', use: 'The cinematic soul of the DezinetVerse. 10-bit 4:2:2 recording for unmatched dynamic range.', img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32' },
+    { id: 1, name: 'The Body', model: 'Sony A7S III', use: 'The cinematic soul of the Vlogging/OTT. 10-bit 4:2:2 recording for unmatched dynamic range.', img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32' },
     { id: 2, name: 'The Eyes', model: '24-70mm GM II', use: 'The only lens we need. Fast, light, and sharp enough for the driest deserts.', img: 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35' },
     { id: 3, name: 'The Wings', model: 'DJI Mavic 3 Pro', use: 'Triple camera system for impossible aerial perspectives.', img: 'https://images.unsplash.com/photo-1473960104354-4ca988358911' },
     { id: 4, name: 'The Audio', model: 'Rode NTG5', use: 'Capturing the silence of the Sahara and the roar of the city in high-fidelity.', img: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc' },
@@ -20,7 +20,7 @@ export default function GearPage() {
           The gear we <br/> <span style={{ background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>use to film.</span>
         </h1>
         <p style={{ fontSize: '1.25rem', color: 'var(--text-dim)', lineHeight: 1.6, fontWeight: 500 }}>
-          The DezinetVerse is not just about the destination. It's about the tools that capture the authentic, raw, and unfiltered reality of our world. Here is our official vlogging kit.
+          The Vlogging/OTT is not just about the destination. It's about the tools that capture the authentic, raw, and unfiltered reality of our world. Here is our official vlogging kit.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 # 🗺️ Project Roadmap (2026)
 
-This roadmap outlines the planned evolution of **DezinetVerse**.
+This roadmap outlines the planned evolution of **Vlogging/OTT**.
 
 ## 📍 Short-Term (Current Focus)
 

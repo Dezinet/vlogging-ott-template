@@ -1,6 +1,6 @@
 # 🎨 Theme Guide & Design Tokens
 
-This guide defines the design tokens and visual hierarchy used in **DezinetVerse** to maintain its premium aesthetic.
+This guide defines the design tokens and visual hierarchy used in **Vlogging/OTT** to maintain its premium aesthetic.
 
 ## 🌈 1. Core Color Palettes
 

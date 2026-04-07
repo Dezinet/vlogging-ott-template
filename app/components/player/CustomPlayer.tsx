@@ -231,7 +231,7 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
       {interactionNeeded && (
         <div onClick={togglePlay} style={{ position: 'absolute', inset: 0, zIndex: 300, backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(30px)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '3rem', cursor: 'pointer' }}>
           <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: 'var(--accent-gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem', color: 'white', boxShadow: '0 0 60px var(--border-glow)', animation: 'pulse-play 2s infinite' }}>▶</div>
-          <p style={{ color: 'white', fontWeight: 950, fontSize: '1.25rem', letterSpacing: '0.3em' }}>ENTER DEZINETVERSE</p>
+          <p style={{ color: 'white', fontWeight: 950, fontSize: '1.25rem', letterSpacing: '0.3em' }}>ENTER Vlogging/OTT</p>
         </div>
       )}
 

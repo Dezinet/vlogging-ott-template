@@ -35,11 +35,11 @@ export default function ContactPage() {
         <div style={{ marginTop: '4rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', textAlign: 'center' }}>
           <div className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)', border: 'none' }}>
              <span style={{ fontSize: '0.6rem', fontWeight: 900, color: 'var(--accent-primary)', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>FOR BUSINESS</span>
-             <p style={{ fontSize: '0.9rem', fontWeight: 700 }}>collab@dezinet.com</p>
+             <p style={{ fontSize: '0.9rem', fontWeight: 700 }}>collab@creator.com</p>
           </div>
           <div className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)', border: 'none' }}>
              <span style={{ fontSize: '0.6rem', fontWeight: 900, color: 'var(--accent-primary)', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>FOR HELP</span>
-             <p style={{ fontSize: '0.9rem', fontWeight: 700 }}>help@dezinet.com</p>
+             <p style={{ fontSize: '0.9rem', fontWeight: 700 }}>help@creator.com</p>
           </div>
         </div>
       </div>

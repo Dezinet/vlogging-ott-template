@@ -11,19 +11,27 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'DezinetVerse — Beyond the Algorithm',
-  description: 'Travel. Survival. Tech. Food. Premium, cinematic content from the Dezinet creator ecosystem. Watch exclusive series, trending originals, and join the elite lounge.',
-  keywords: ['vlog', 'travel', 'survival', 'premium content', 'vlogger', 'DezinetVerse'],
+  title: "Premium Vlogging & OTT Template | Next.js",
+  description: "A fast and responsive video platform template for creators. Built with Next.js, this starter kit includes a custom video player, ad-skip features, and easy content management.",
+  keywords: [
+    "Next.js vlogging template",
+    "OTT frontend kit",
+    "React video player ads",
+    "Static video platform",
+    "Video series template",
+    "Creator economy website"
+  ],
+  authors: [{ name: "Dezinet" }],
   openGraph: {
-    title: 'DezinetVerse — Beyond the Algorithm',
-    description: 'Watch exclusive vlogs, survival series, and join our elite creator lounge.',
-    type: 'website',
-    locale: 'en_US',
+    title: "Vlogging & OTT Video Template",
+    description: "Build your own premium video streaming site with this high-performance Next.js starter.",
+    type: "website",
+    locale: "en_US",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'DezinetVerse — Beyond the Algorithm',
-    description: 'Watch exclusive vlogs and cinematic creator series.',
+    card: "summary_large_image",
+    title: "Next.js Vlogging & OTT Starter",
+    description: "The best open-source foundation for your personal video platform.",
   },
   robots: {
     index: true,

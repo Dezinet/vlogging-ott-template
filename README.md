@@ -1,11 +1,11 @@
-# 🎥 DezinetVerse - Premium Vlogging & OTT Frontend Template
+# 🎥 Vlogging/OTT - Premium Vlogging & OTT Frontend Template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16+-black.svg)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-DezinetVerse is a state-of-the-art, high-performance, and data-driven frontend template built for influencers, content creators, and OTT platforms. It provides a cinematic, "Netflix-grade" user experience right out of the box, optimized for speed, SEO, and visual excellence.
+Vlogging/OTT is a state-of-the-art, high-performance, and data-driven frontend template built for influencers, content creators, and OTT platforms. It provides a cinematic, "Netflix-grade" user experience right out of the box, optimized for speed, SEO, and visual excellence.
 
 ## 🖼️ Visual Experience
 
@@ -129,7 +129,7 @@ To host this project on Cloudflare Pages, use the following settings in your das
 ## 📄 Licensing & Security
 
 - **License**: [MIT License](LICENSE)
-- **Code of Conduct**: [DezinetVerse CoC](CODE_OF_CONDUCT.md)
+- **Code of Conduct**: [Vlogging/OTT CoC](CODE_OF_CONDUCT.md)
 - **Security Policy**: [Report Vulnerabilities](SECURITY.md)
 - **Support**: [Get Help](SUPPORT.md)
 
