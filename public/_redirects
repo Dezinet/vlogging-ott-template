@@ -1,2 +1,2 @@
-# Ensure all non-matched routes Fallback (if any)
-/* /404.html 404
+# Standard Next.js Static Redirects
+# (Cloudflare Pages automatically uses 404.html if it exists in the root)
