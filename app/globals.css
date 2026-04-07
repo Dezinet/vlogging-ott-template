@@ -1,40 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
 
 :root {
-  /* Premium Light Palette */
-  --bg-deep: #f8fafc;
+  /* Premium Studio Light Palette */
+  --bg-deep: #fcfcfd;
   --bg-primary: #ffffff;
-  --bg-secondary: #f1f5f9;
-  --bg-card: rgba(255, 255, 255, 0.7);
-  --bg-card-hover: rgba(255, 255, 255, 0.9);
+  --bg-secondary: #f4f4f5;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: #ffffff;
 
-  --accent-primary: #4f46e5;
-  --accent-secondary: #7c3aed;
-  --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --accent-primary: #18181b; /* Sophisticated Black */
+  --accent-secondary: #4f46e5;
+  --accent-gradient: linear-gradient(135deg, #18181b 0%, #3f3f46 100%);
 
-  --text-main: #0f172a;
-  --text-dim: #475569;
-  --text-muted: #94a3b8;
+  --text-main: #09090b;
+  --text-dim: #52525b;
+  --text-muted: #a1a1aa;
 
-  --border-light: rgba(0, 0, 0, 0.05);
-  --border-glow: rgba(79, 70, 229, 0.2);
+  --border-light: rgba(0, 0, 0, 0.04);
+  --border-glow: rgba(0, 0, 0, 0.02);
 
   --font-main: 'Plus Jakarta Sans', sans-serif;
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
 
-  --nav-height: 72px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 24px;
-  --radius-2xl: 32px;
+  --nav-height: 80px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-2xl: 48px;
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 20px -5px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 50px -10px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 40px 100px -20px rgba(0, 0, 0, 0.05);
 
-  --section-px: 4rem;
-  --grid-gap: 2.5rem;
+  --section-px: 6rem;
+  --grid-gap: 3rem;
 }
 
 /* 🌙 NIGHT VISION (Dark Theme) */
