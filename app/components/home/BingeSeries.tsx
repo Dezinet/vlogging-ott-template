@@ -4,11 +4,11 @@ import Link from 'next/link';
 import seriesData from '../../data/series.json';
 
 export default function BingeSeries() {
-  // Take first 6 for the home page binge section
-  const series = seriesData.slice(0, 6);
+  // Show 12 series for a much richer homepage content experience
+  const series = seriesData.slice(0, 12);
 
   return (
-    <section className="responsive-section" style={{ backgroundColor: 'white' }}>
+    <section className="responsive-section" style={{ backgroundColor: 'var(--bg-deep)' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: 'var(--text-main)', letterSpacing: '-0.04em' }}>Popular Web Series</h2>
