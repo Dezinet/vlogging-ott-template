@@ -25,7 +25,6 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
   const [showControls, setShowControls] = useState(true);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [interactionNeeded, setInteractionNeeded] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [seekFeedback, setSeekFeedback] = useState<{ type: string; val: string } | null>(null);
@@ -47,9 +46,8 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
     if (videoRef.current) {
       if (isPlaying) { videoRef.current.pause(); setIsPlaying(false); }
       else { 
-        videoRef.current.play().catch(() => setInteractionNeeded(true));
+        videoRef.current.play().catch(() => {});
         setIsPlaying(true); 
-        setInteractionNeeded(false); 
       }
     }
   }, [isPlaying]);
@@ -118,8 +116,8 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
       videoRef.current.muted = false;
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
-        playPromise.then(() => { setIsPlaying(true); setInteractionNeeded(false); })
-        .catch(() => { setInteractionNeeded(true); setIsPlaying(false); });
+        playPromise.then(() => { setIsPlaying(true); })
+        .catch(() => { setIsPlaying(false); });
       }
     }
     const handleFsChange = () => setIsFullScreen(!!document.fullscreenElement);
@@ -154,7 +152,7 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
         position: 'relative', width: '100%', 
         aspectRatio: '16/9', 
         backgroundColor: '#000', borderRadius: isFullScreen ? '0' : '0', overflow: 'hidden',
-        boxShadow: isFullScreen ? 'none' : '0 20px 80px rgba(0,0,0,0.5)', cursor: showControls || interactionNeeded || isAdPlaying || showSettings ? 'default' : 'none'
+        boxShadow: isFullScreen ? 'none' : '0 20px 80px rgba(0,0,0,0.5)', cursor: showControls || isAdPlaying || showSettings ? 'default' : 'none'
       }}
       onMouseMove={() => {
         setShowControls(true);
@@ -176,10 +174,17 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
         onLoadedMetadata={(e) => {
            const dur = e.currentTarget.duration;
            if (isFinite(dur)) setDuration(dur);
+           // Force autoplay attempt
+           videoRef.current?.play().catch(() => {
+             if (videoRef.current) {
+               videoRef.current.muted = true;
+               videoRef.current.play();
+             }
+           });
         }}
         onEnded={() => isAdPlaying ? setIsAdPlaying(false) : setIsPlaying(false)}
         onClick={(e) => { e.stopPropagation(); togglePlay(); }}
-        playsInline
+        playsInline autoPlay
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain', zIndex: 1 }}
       />
 
@@ -196,13 +201,13 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
       {/* 🎟️ AD OVERLAY */}
       {isAdPlaying && isPlaying && (
         <div style={{ position: 'absolute', inset: 0, zIndex: 100, pointerEvents: 'none' }}>
-           <div style={{ position: 'absolute', top: '2rem', left: '2rem', background: 'rgba(0,0,0,0.85)', color: 'white', padding: '10px 24px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 900, border: '1px solid rgba(255,255,255,0.1)', letterSpacing: '0.1em' }}>implement your ad logic here..</div>
-           <div onClick={(e) => { e.stopPropagation(); if (canSkipAd) setIsAdPlaying(false); }} style={{ 
-             position: 'absolute', bottom: '6rem', right: '0', background: 'rgba(0,0,0,0.95)', color: 'white', padding: '1.25rem 2.5rem', 
-             borderTopLeftRadius: '50px', borderBottomLeftRadius: '50px', fontSize: '1rem', fontWeight: 900, cursor: canSkipAd ? 'pointer' : 'default', 
-             pointerEvents: 'auto', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 10px 40px rgba(0,0,0,0.5)'
+           <div style={{ position: 'absolute', top: '1rem', left: '1rem', background: 'rgba(0,0,0,0.85)', color: 'white', padding: '4px 12px', borderRadius: '4px', fontSize: '10px', fontWeight: 900, border: '1px solid rgba(255,255,255,0.1)', letterSpacing: '0.1em', opacity: 0.8 }}>AD</div>
+           <div onClick={(e) => { e.stopPropagation(); if (canSkipAd) setIsAdPlaying(false); }} className="skip-ad-btn" style={{ 
+             position: 'absolute', bottom: 'clamp(5rem, 25%, 8rem)', right: '0', background: 'rgba(0,0,0,0.9)', color: 'white', padding: '10px 20px', 
+             borderTopLeftRadius: '50px', borderBottomLeftRadius: '50px', fontSize: '12px', fontWeight: 900, cursor: canSkipAd ? 'pointer' : 'default', 
+             pointerEvents: 'auto', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 10px 40px rgba(0,0,0,0.5)', minWidth: '100px', display: 'flex', justifyContent: 'flex-start'
            }}>
-              {canSkipAd ? <span style={{ color: 'var(--accent-primary)' }}>SKIP AD ⮞</span> : <span>SKIP AD IN {adTimeLeft}s...</span>}
+              {canSkipAd ? <span style={{ color: 'var(--accent-primary)' }}>SKIP AD ⮞</span> : <span>SKIP IN {adTimeLeft}s</span>}
            </div>
         </div>
       )}
@@ -212,72 +217,75 @@ const CustomPlayer = ({ src, poster }: { src: string; poster?: string }) => {
         <div 
           onClick={(e) => e.stopPropagation()}
           style={{
-            position: 'absolute', bottom: '8rem', right: '4rem', width: '280px', backgroundColor: 'rgba(15,15,20,0.98)', 
+            position: 'absolute', bottom: 'clamp(4rem, 20%, 8rem)', right: '1rem', width: 'clamp(200px, 40vw, 280px)', backgroundColor: 'rgba(15,15,20,0.98)', 
             backdropFilter: 'blur(30px)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)', 
-            boxShadow: '0 20px 80px rgba(0,0,0,0.9)', zIndex: 200, padding: '20px 0'
+            boxShadow: '0 20px 80px rgba(0,0,0,0.9)', zIndex: 200, padding: '15px 0'
           }}
         >
-          <div style={{ padding: '0 28px 12px', fontSize: '0.7rem', fontWeight: 900, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.15em' }}>SPEED</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', padding: '0 24px 20px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+          <div style={{ padding: '0 20px 10px', fontSize: '0.65rem', fontWeight: 900, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.15em' }}>PLAYBACK SPEED</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '6px', padding: '0 15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
             {[0.5, 1, 1.5, 2].map(s => (
               <button key={s} onClick={() => { if(videoRef.current) videoRef.current.playbackRate = s; setPlaybackSpeed(s); setShowSettings(false); }}
-                style={{ background: playbackSpeed === s ? 'var(--accent-primary)' : 'rgba(255,255,255,0.05)', color: 'white', border: 'none', borderRadius: '10px', padding: '12px 0', fontSize: '0.85rem', fontWeight: 900, cursor: 'pointer' }}>{s}x</button>
+                style={{ background: playbackSpeed === s ? 'var(--accent-primary)' : 'rgba(255,255,255,0.05)', color: 'white', border: 'none', borderRadius: '8px', padding: '10px 0', fontSize: '0.75rem', fontWeight: 900, cursor: 'pointer' }}>{s}x</button>
             ))}
           </div>
-        </div>
-      )}
-
-      {/* START OVERLAY */}
-      {interactionNeeded && (
-        <div onClick={togglePlay} style={{ position: 'absolute', inset: 0, zIndex: 300, backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(30px)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '3rem', cursor: 'pointer' }}>
-          <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: 'var(--accent-gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem', color: 'white', boxShadow: '0 0 60px var(--border-glow)', animation: 'pulse-play 2s infinite' }}>▶</div>
-          <p style={{ color: 'white', fontWeight: 950, fontSize: '1.25rem', letterSpacing: '0.3em' }}>ENTER Vlogging/OTT</p>
         </div>
       )}
 
       {/* 🚀 MAIN CONTROLS OVERLAY */}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0,
-        padding: isFullScreen ? '4rem var(--section-px)' : '1.5rem 2rem',
+        padding: isFullScreen ? 'calc(1rem + 2vw) var(--section-px)' : '1rem',
         background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 40%, transparent 100%)',
-        zIndex: 10, opacity: showControls && !interactionNeeded && !isAdPlaying ? 1 : 0, transition: 'all 0.5s ease',
-        display: 'flex', flexDirection: 'column', gap: '1rem', pointerEvents: isAdPlaying ? 'none' : 'auto'
+        zIndex: 10, opacity: showControls && !isAdPlaying ? 1 : 0, transition: 'all 0.5s ease',
+        display: 'flex', flexDirection: 'column', gap: '0.8rem', pointerEvents: isAdPlaying ? 'none' : 'auto'
       }}>
         
         {/* PROGRESS SYSTEM */}
         <div style={{ position: 'relative', width: '100%', height: '4px', display: 'flex', alignItems: 'center' }}>
           <input type="range" min="0" max="100" value={progress} onChange={handleSeek} 
-            style={{ width: '100%', height: '12px', opacity: 0, position: 'absolute', zIndex: 10, cursor: isFinite(duration) ? 'pointer' : 'wait' }} />
+            style={{ width: '100%', height: '20px', opacity: 0, position: 'absolute', zIndex: 10, cursor: isFinite(duration) ? 'pointer' : 'wait' }} />
           <div style={{ width: '100%', height: '100%', backgroundColor: 'rgba(255,255,255,0.2)', position: 'absolute', borderRadius: '10px' }}></div>
           <div style={{ width: `${progress}%`, height: '100%', backgroundColor: 'var(--accent-primary)', position: 'relative', borderRadius: '10px', boxShadow: '0 0 15px var(--accent-primary)' }}>
-             <div style={{ position: 'absolute', right: '-6px', top: '-6px', width: '16px', height: '16px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px rgba(0,0,0,0.5)' }}></div>
+             <div style={{ position: 'absolute', right: '-6px', top: 'calc(50% - 8px)', width: '16px', height: '16px', borderRadius: '50%', background: 'white', boxShadow: '0 0 10px rgba(0,0,0,0.5)' }}></div>
           </div>
         </div>
 
         {/* TOOLBAR */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <button onClick={(e) => { e.stopPropagation(); jump(-10); }} style={{ background: 'none', border: 'none', cursor: 'pointer' }} className="jump-icon"><Back10 /></button>
-                <button onClick={(e) => { e.stopPropagation(); togglePlay(); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.8rem', width: '40px' }}>{isPlaying ? '⏸' : '▶'}</button>
-                <button onClick={(e) => { e.stopPropagation(); jump(10); }} style={{ background: 'none', border: 'none', cursor: 'pointer' }} className="jump-icon"><Forward10 /></button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.5rem, 3vw, 2rem)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.5rem, 2vw, 1.5rem)' }}>
+                <button onClick={(e) => { e.stopPropagation(); jump(-10); }} style={{ background: 'none', border: 'none', cursor: 'pointer' }} className="control-btn"><Back10 /></button>
+                <button onClick={(e) => { e.stopPropagation(); togglePlay(); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', fontSize: 'clamp(1.2rem, 3vw, 1.8rem)', width: 'auto', minWidth: '30px' }}>{isPlaying ? '⏸' : '▶'}</button>
+                <button onClick={(e) => { e.stopPropagation(); jump(10); }} style={{ background: 'none', border: 'none', cursor: 'pointer' }} className="control-btn"><Forward10 /></button>
             </div>
-            <button onClick={(e) => { e.stopPropagation(); toggleMute(); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2rem' }}>{isMuted ? '🔇' : '🔊'}</button>
-            <span style={{ color: 'white', fontSize: '0.85rem', fontWeight: 900, fontFamily: 'monospace' }}>{formattedTime} / {formattedDuration}</span>
+            <button onClick={(e) => { e.stopPropagation(); toggleMute(); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', fontSize: 'clamp(0.9rem, 2vw, 1.2rem)' }} className="hide-mobile-small">{isMuted ? '🔇' : '🔊'}</button>
+            <span style={{ color: 'white', fontSize: 'clamp(0.65rem, 1.5vw, 0.85rem)', fontWeight: 900, fontFamily: 'monospace' }}>{formattedTime} / {formattedDuration}</span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-            <button onClick={(e) => { e.stopPropagation(); setShowSettings(!showSettings); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.4rem' }}>⚙️</button>
-            <button onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.4rem' }}>🗖</button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.8rem, 2vw, 1.5rem)' }}>
+            <button onClick={(e) => { e.stopPropagation(); setShowSettings(!showSettings); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)' }}>⚙️</button>
+            <button onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }} style={{ color: 'white', background: 'none', border: 'none', cursor: 'pointer', padding: '5px' }}>
+               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                 <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+               </svg>
+            </button>
           </div>
         </div>
       </div>
 
       <style>{`
         video::-webkit-media-controls { display:none !important; }
-        .jump-icon:hover { transform: scale(1.2); }
-        .jump-icon:active { transform: scale(0.9); }
+        .control-btn { padding: 0; display: flex; align-items: center; transition: all 0.2s; }
+        .control-btn svg { width: clamp(24px, 4vw, 34px); height: clamp(24px, 4vw, 34px); }
+        .control-btn:hover { transform: scale(1.1); }
+        .control-btn:active { transform: scale(0.9); }
         @keyframes pulse-play { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        
+        @media (max-width: 600px) {
+           .hide-mobile-small { display: none !important; }
+           .skip-ad-btn { padding: 8px 16px !important; min-width: 80px !important; bottom: 20% !important; scale: 0.9; }
+        }
       `}</style>
     </div>
   );
