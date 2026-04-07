@@ -115,6 +115,17 @@ The `CustomPlayer.tsx` is built to support two primary advertising models:
 
 ---
 
+## 🌩️ Static Hosting (Cloudflare Pages)
+
+To host this project on Cloudflare Pages, use the following settings in your dashboard:
+
+1.  **Framework Preset**: `None` (or `Static HTML`)
+2.  **Build Command**: `npm run build`
+3.  **Build Output Directory**: `out`
+4.  **Deploy Command**: **Leave this EMPTY** ❗️ (Do not use `npx wrangler deploy` as it triggers worker migration).
+
+---
+
 ## 📄 Licensing & Security
 
 - **License**: [MIT License](LICENSE)
