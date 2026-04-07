@@ -1,0 +1,33 @@
+{
+  "creator": {
+    "name": "Dezinet",
+    "handle": "@DezinetVerse",
+    "avatar": "https://i.pravatar.cc/150?u=dezinet",
+    "cover": "https://images.unsplash.com/photo-1478720568477-152d9b164e26",
+    "bio": "Cinematic storyteller. Survivalist. Tech enthusiast. Join the journey beyond the algorithm.",
+    "subscribers": "2.4M",
+    "verified": true,
+    "location": "Tokyo / Nomad",
+    "social": {
+      "twitter": "https://twitter.com/dezinet",
+      "instagram": "https://instagram.com/dezinet",
+      "youtube": "https://youtube.com/dezinet"
+    }
+  },
+  "categories": [
+    { "id": "cat1", "name": "SURVIVAL", "icon": "🎒" },
+    { "id": "cat2", "name": "TECH", "icon": "💻" },
+    { "id": "cat3", "name": "TRAVEL", "icon": "✈️" },
+    { "id": "cat4", "name": "FOOD", "icon": "🍜" },
+    { "id": "cat5", "name": "VISION", "icon": "👁️" }
+  ],
+  "series": [
+    {
+      "id": "ser1",
+      "name": "Sahara Solo",
+      "description": "7 days, 1 motorbike, 0 maps.",
+      "count": "12 Episodes",
+      "thumb": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957"
+    }
+  ]
+}

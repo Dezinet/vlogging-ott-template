@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ser_01",
+    "title": "The Sahara Expedition",
+    "description": "I travel 5,000 miles across the Sahara desert alone. It's a long story about surviving there.",
+    "thumbnail": "https://images.unsplash.com/photo-1509316785289-025f5b846b35",
+    "category": "SURVIVAL",
+    "episodesCount": 5
+  },
+  {
+    "id": "ser_02",
+    "title": "Kyoto After Dark",
+    "description": "I walk through Kyoto at night to show you the city lights and the rainy streets.",
+    "thumbnail": "https://images.unsplash.com/photo-1540959733332-e94e270b4d48",
+    "category": "TRAVEL",
+    "episodesCount": 4
+  },
+  {
+    "id": "ser_03",
+    "title": "The Vision Chronicles",
+    "description": "I talk about how technology might change the world in the next 100 years.",
+    "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+    "category": "VISION",
+    "episodesCount": 6
+  },
+  {
+    "id": "ser_04",
+    "title": "Cyberpunk Tokyo 2077",
+    "description": "Exploring the neon-lit streets of Tokyo through a futuristic lens. A journey into the heart of cyberculture.",
+    "thumbnail": "/thumbnails/cyberpunk_tokyo.png",
+    "category": "TECH",
+    "episodesCount": 8
+  },
+  {
+    "id": "ser_05",
+    "title": "The Icelandic Glaciers",
+    "description": "A breathtaking journey through the majestic ice caves and glaciers of Iceland. Witness nature's frozen beauty.",
+    "thumbnail": "/thumbnails/iceland_glaciers.png",
+    "category": "NATURE",
+    "episodesCount": 4
+  },
+  {
+    "id": "ser_06",
+    "title": "Street Food Safari",
+    "description": "Diving into the vibrant flavors and chaotic energy of Bangkok's legendary street food scene.",
+    "thumbnail": "/thumbnails/street_food_safari.png",
+    "category": "FOOD",
+    "episodesCount": 12
+  },
+  {
+    "id": "ser_07",
+    "title": "The Mars Simulation",
+    "description": "What is it like to live on Mars? We spend 30 days in a high-tech simulation in the red desert.",
+    "thumbnail": "/thumbnails/mars_simulation.png",
+    "category": "SCIENCE",
+    "episodesCount": 6
+  },
+  {
+    "id": "ser_08",
+    "title": "Abandoned Europe",
+    "description": "Uncovering the haunting beauty of Europe's forgotten palaces and ruins. Tales from the past, left to time.",
+    "thumbnail": "/thumbnails/abandoned_europe.png",
+    "category": "EXPLORATION",
+    "episodesCount": 5
+  }
+]
