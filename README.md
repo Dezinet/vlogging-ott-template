@@ -9,17 +9,20 @@ DezinetVerse is a state-of-the-art, high-performance, and data-driven frontend t
 
 ## 🖼️ Visual Experience
 
-````carousel
-![Homepage - Cinematic Hero](/screenshots/homepage_hero.png)
-<!-- slide -->
-![Series Collective - Full Chronicle](/screenshots/series_page_full.png)
-<!-- slide -->
-![Premium Experience - Member Only Content](/screenshots/video_page_locked.png)
-<!-- slide -->
-![Smart Monetization - Ad Insertion](/screenshots/video_page_with_ad.png)
-<!-- slide -->
-![Immersive Player - Full Screen Mode](/screenshots/video_fullscreen.png)
-````
+### Cinematic Hero Experience
+![Homepage - Cinematic Hero](./screenshots/homepage_hero.png)
+
+### Series Collective & Full Chronicle
+![Series Collective - Full Chronicle](./screenshots/series_page_full.png)
+
+### Premium Content Gating
+![Premium Experience - Member Only Content](./screenshots/video_page_locked.png)
+
+### Smart Monetization - Ad Insertion
+![Smart Monetization - Ad Insertion](./screenshots/video_page_with_ad.png)
+
+### Immersive Full Screen Player
+![Immersive Player - Full Screen Mode](./screenshots/video_fullscreen.png)
 
 ---
 
