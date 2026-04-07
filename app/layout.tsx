@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    "deploy-id": "STUDIO_ULTRA_V3_08APR",
+    "deployment-status": "SUCCESS"
+  }
 };
 
 export default function RootLayout({
