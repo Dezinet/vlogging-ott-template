@@ -6,10 +6,10 @@ import Image from 'next/image';
 
 // Syncing with Real video.json IDs
 const SLIDES = [
-  { id: 'B1q9zP2K8wV', title: 'Across the Sahara', category: 'EPISODE 01', hook: 'I crossed the Sahara alone with no gear or crew. This is how it went.', img: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35' },
-  { id: 'bV1q9zP2K8w', title: 'The Modern Job Escape', category: 'TECH ORIGINALS', hook: 'I quit my job to make videos full-time. Here is my setup and what I plan to do.', img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643' },
-  { id: 'v37-Sx5jN', title: 'Cooking on Lava: Iceland', category: 'FOOD ARCHIVE', hook: 'I traveled to find special recipes in nature. Here are the secrets I discovered.', img: 'https://images.unsplash.com/photo-1518005020951-ecc8a8ad66b1' },
-  { id: 'v20-Sx5jN', title: 'Solo Survival: Nordic', category: 'SURVIVAL SERIES', hook: 'I spent 24 hours in a very cold forest. It was a hard test for me.', img: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5' }
+  { id: 'v_ser_01_1', title: 'Across the Sahara', category: 'EPISODE 01', hook: 'I crossed the Sahara alone with no gear or crew. This is how it went.', img: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35' },
+  { id: 'v_ser_02_1', title: 'The Modern Job Escape', category: 'TECH ORIGINALS', hook: 'I quit my job to make videos full-time. Here is my setup and what I plan to do.', img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643' },
+  { id: 'v_ser_03_1', title: 'Cooking on Lava: Iceland', category: 'FOOD ARCHIVE', hook: 'I traveled to find special recipes in nature. Here are the secrets I discovered.', img: 'https://images.unsplash.com/photo-1518005020951-ecc8a8ad66b1' },
+  { id: 'v_ser_04_1', title: 'Solo Survival: Nordic', category: 'SURVIVAL SERIES', hook: 'I spent 24 hours in a very cold forest. It was a hard test for me.', img: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5' }
 ];
 
 export default function Hero({ isLoggedIn }: { isLoggedIn: boolean }) {
