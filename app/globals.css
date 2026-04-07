@@ -264,7 +264,7 @@ a {
 .hero-mask {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--bg-deep) 0%, transparent 50%);
+  background: linear-gradient(to right, var(--bg-deep) 0%, rgba(252, 252, 253, 0.4) 40%, transparent 100%);
   z-index: 2;
 }
 
