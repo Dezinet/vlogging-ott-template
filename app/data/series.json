@@ -1,66 +1,16 @@
 [
-  {
-    "id": "ser_01",
-    "title": "The Sahara Expedition",
-    "description": "I travel 5,000 miles across the Sahara desert alone. It's a long story about surviving there.",
-    "thumbnail": "https://images.unsplash.com/photo-1509316785289-025f5b846b35",
-    "category": "SURVIVAL",
-    "episodesCount": 5
-  },
-  {
-    "id": "ser_02",
-    "title": "Kyoto After Dark",
-    "description": "I walk through Kyoto at night to show you the city lights and the rainy streets.",
-    "thumbnail": "https://images.unsplash.com/photo-1540959733332-e94e270b4d48",
-    "category": "TRAVEL",
-    "episodesCount": 4
-  },
-  {
-    "id": "ser_03",
-    "title": "The Vision Chronicles",
-    "description": "I talk about how technology might change the world in the next 100 years.",
-    "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-    "category": "VISION",
-    "episodesCount": 6
-  },
-  {
-    "id": "ser_04",
-    "title": "Cyberpunk Tokyo 2077",
-    "description": "Exploring the neon-lit streets of Tokyo through a futuristic lens. A journey into the heart of cyberculture.",
-    "thumbnail": "/thumbnails/cyberpunk_tokyo.png",
-    "category": "TECH",
-    "episodesCount": 8
-  },
-  {
-    "id": "ser_05",
-    "title": "The Icelandic Glaciers",
-    "description": "A breathtaking journey through the majestic ice caves and glaciers of Iceland. Witness nature's frozen beauty.",
-    "thumbnail": "/thumbnails/iceland_glaciers.png",
-    "category": "NATURE",
-    "episodesCount": 4
-  },
-  {
-    "id": "ser_06",
-    "title": "Street Food Safari",
-    "description": "Diving into the vibrant flavors and chaotic energy of Bangkok's legendary street food scene.",
-    "thumbnail": "/thumbnails/street_food_safari.png",
-    "category": "FOOD",
-    "episodesCount": 12
-  },
-  {
-    "id": "ser_07",
-    "title": "The Mars Simulation",
-    "description": "What is it like to live on Mars? We spend 30 days in a high-tech simulation in the red desert.",
-    "thumbnail": "/thumbnails/mars_simulation.png",
-    "category": "SCIENCE",
-    "episodesCount": 6
-  },
-  {
-    "id": "ser_08",
-    "title": "Abandoned Europe",
-    "description": "Uncovering the haunting beauty of Europe's forgotten palaces and ruins. Tales from the past, left to time.",
-    "thumbnail": "/thumbnails/abandoned_europe.png",
-    "category": "EXPLORATION",
-    "episodesCount": 5
-  }
+  { "id": "ser_01", "title": "The Sahara Expedition", "description": "5,000 miles across the Sahara alone.", "thumbnail": "https://images.unsplash.com/photo-1509316785289-025f5b846b35", "category": "SURVIVAL", "episodesCount": 10 },
+  { "id": "ser_02", "title": "Kyoto After Dark", "description": "Nocturnal explorations of Japan's ancient capital.", "thumbnail": "https://images.unsplash.com/photo-1540959733332-e94e270b4d48", "category": "TRAVEL", "episodesCount": 10 },
+  { "id": "ser_03", "title": "The Vision Chronicles", "description": "How technology reshapes our tomorrow.", "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa", "category": "VISION", "episodesCount": 10 },
+  { "id": "ser_04", "title": "Cyberpunk Tokyo 2077", "description": "Futuristic lens on Tokyo's neon streets.", "thumbnail": "https://images.unsplash.com/photo-1511512578047-dfb367046420", "category": "TECH", "episodesCount": 10 },
+  { "id": "ser_05", "title": "Icelandic Glaciers", "description": "A journey through nature's frozen cathedrals.", "thumbnail": "https://images.unsplash.com/photo-1511300636408-57f1b29cc364", "category": "NATURE", "episodesCount": 10 },
+  { "id": "ser_06", "title": "Street Food Safari", "description": "Diving into Bangkok's chaotic culinary heart.", "thumbnail": "https://images.unsplash.com/photo-1504674900247-0877df9cc836", "category": "FOOD", "episodesCount": 10 },
+  { "id": "ser_07", "title": "The Mars Simulation", "description": "30 days in a high-tech red desert dome.", "thumbnail": "https://images.unsplash.com/photo-1549239105-950c459ae6a9", "category": "SCIENCE", "episodesCount": 10 },
+  { "id": "ser_08", "title": "Abandoned Europe", "description": "Forgotten palaces and haunting ruins.", "thumbnail": "https://images.unsplash.com/photo-1447069387593-a5de0862481e", "category": "EXPLORATION", "episodesCount": 10 },
+  { "id": "ser_09", "title": "Deep Sea Explorers", "description": "Uncovering secrets of the midnight zone.", "thumbnail": "https://images.unsplash.com/photo-1544551763-46a013bb70d5", "category": "DANGER", "episodesCount": 10 },
+  { "id": "ser_10", "title": "Alpine Solo Ascent", "description": "Solo climbing the world's most iconic peaks.", "thumbnail": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b", "category": "ADVENTURE", "episodesCount": 10 },
+  { "id": "ser_11", "title": "Van Life Chronicles", "description": "The unglamorous truth of living on the road.", "thumbnail": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7", "category": "LIFESTYLE", "episodesCount": 10 },
+  { "id": "ser_12", "title": "Himalayan Trek", "description": "A spiritual and physical journey through Nepal.", "thumbnail": "https://images.unsplash.com/photo-1510915363350-db23b9c03b12", "category": "TRAVEL", "episodesCount": 10 },
+  { "id": "ser_13", "title": "Modern Workspaces", "description": "Inside the world's most high-tech setups.", "thumbnail": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853", "category": "TECH", "episodesCount": 10 },
+  { "id": "ser_14", "title": "Nordic Survival", "description": "Surviving the extreme cold of the Arctic circle.", "thumbnail": "https://images.unsplash.com/photo-1517154421773-0529f29ea451", "category": "SURVIVAL", "episodesCount": 10 }
 ]
